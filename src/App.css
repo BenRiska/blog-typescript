@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
+:root {
+  --cursor-ring: white;
 }
 
-.App-logo {
-  height: 40vmin;
+body {
+  cursor: url(./assets/white-cursor.svg), default;
+  height: 100vh !important;
+  overflow: hidden;
+}
+
+.cursor {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cursor:before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: -23px;
+  display: block;
+  width: 60px;
+  height: 60px;
+  transform: scale(1);
+  background: transparent;
+  border: 2px solid var(--cursor-ring);
+  transition: border 0.3s ease;
+  border-radius: 50%;
+  z-index: 10;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main__content {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+.top-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 8vh;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 1vw;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  z-index: 5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.white-icon {
+  height: 50px;
+}
+
+.sound-icon {
+  opacity: 0.4;
+  height: 40px;
+  transition: all 0.5s ease;
+  padding: 10px;
+  z-index: 5;
+}
+
+.sound-icon.on {
+  cursor: url(./assets/close-sound.svg), default !important;
+  opacity: 1;
+}
+
+.static-link {
+  font-size: 1rem;
+  font-weight: 500;
+  z-index: 5;
+}
+
+.say-hi {
+  position: relative;
+  cursor: url(./assets/hand.svg), default !important;
+  color: var(--normal-text-color);
+}
+
+.say-hi > a {
+  cursor: url(./assets/hand.svg), default !important;
+  text-decoration: none;
+  color: var(--normal-text-color);
+}
+
+.say-hi:hover::after {
+  content: "don't be shy";
+  position: absolute;
+  left: -230%;
+  color: var(--normal-text-color);
+  transition: all 0.3s ease;
+  animation: link-animation 1s cubic-bezier(0.25, 0.8, 0.25, 1) 0s 1 normal
+    forwards running;
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1vw;
+  align-items: center;
+}
+
+.portfolio {
+  position: relative;
+  cursor: url(./assets/left-arrow.svg), default !important;
+}
+
+.portfolio > a {
+  cursor: url(./assets/left-arrow.svg), default !important;
+  text-decoration: none;
+  color: var(--normal-text-color);
+}
+
+.portfolio:hover::after {
+  content: "view my work";
+  position: absolute;
+  right: -170%;
+  animation: link-animation 1s cubic-bezier(0.25, 0.8, 0.25, 1) 0s 1 normal
+    forwards running;
+  color: var(--normal-text-color);
+}
+
+.github {
+  position: relative;
+  cursor: url(./assets/right-arrow.svg), default !important;
+}
+
+.github > a {
+  cursor: url(./assets/right-arrow.svg), default !important;
+  text-decoration: none;
+  color: var(--normal-text-color);
+}
+
+.github:hover::after {
+  content: "view my code";
+  position: absolute;
+  left: -230%;
+  transition: all 0.3s ease;
+  animation: link-animation 1s cubic-bezier(0.25, 0.8, 0.25, 1) 0s 1 normal
+    forwards running;
+  color: var(--normal-text-color);
+}
+
+@keyframes link-animation {
+  0% {
+    transform: translatey(100%);
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translatey(0);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .socials {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .sound-icon {
+    display: none;
+  }
+
+  .portfolio,
+  .say-hi,
+  .github {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .cursor {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  :root {
+    --blog-text: 16px;
+    --blog-title-text: 30px;
+    --blog-subtitle-text: 24px;
+    --blog-padding: 1rem 0;
+  }
+
+  .white-icon {
+    height: 40px;
+  }
+
+  .top-bar {
+    padding: 0 2vw;
   }
 }
