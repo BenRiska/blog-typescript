@@ -13,7 +13,7 @@ export const homeAnimation = (f: any) => {
   }
 
   export const easeBlogs = () => {
-    tl.to(".blogs", {
+    tl.to(".blogList", {
       opacity: 1,
       duration: .5,
       y: 0,
@@ -22,7 +22,7 @@ export const homeAnimation = (f: any) => {
   }
   
   export const prepBlogAnimation = (showBlog: any) => {
-    tl.to(".blog-topics, .blog-layout, .layout-container", {
+    tl.to(".blogList__topics-container, .blogList__layout, .blogList__container", {
       y: -10,
       duration: 1,
       opacity: 0,
@@ -60,56 +60,24 @@ export const homeAnimation = (f: any) => {
       onComplete: f
     })
   }
-  
-  export const removeContactText = (f: any) => {
-    tl.to(`.blogs, .say-hi, .share`, {
-      duration: 1,
-      opacity: 0,
-      onComplete: f
-    })
-  }
-  
-  export const removeContactSection = (f: any) => {
-    tl.to(`.contact, .contact-exit, .share`, {
-      duration: 1,
-      opacity: 0,
-      onComplete: f
-    })
-  }
-  
-  
-  export const removeContactBlogText = (blog: any, f: any) => {
-    tl.to(`.blog-${blog}, .say-hi, .share`, {
-      duration: 1,
-      opacity: 0,
-      onComplete: f
-    })
-  }
-
-export const showContents = () => {
-    tl.to(".contact, .contact-exit > img", {
-        duration: 3,
-        opacity: 1,
-    })
-}
 
 
-export const openDropdownAnimation = () => {tl.to(".underline", {
+export const openDropdownAnimation = () => {tl.to(".blogList__underline", {
     duration: .7,
     width: "100px",
     height: "2px",
     ease: "power1.out"
-}).to(".topics", {
+}).to(".blogList__topics", {
     duration: .7,
     height: "160px",
     ease: "power1.out"
 })}
 
-export const closeDropdownAnimation = () => {tl.to(".topics", {
+export const closeDropdownAnimation = () => {tl.to(".blogList__topics", {
     duration: .5,
     height: "0",
     ease: "expo.inout"
-}).to(".underline", {
+}).to(".blogList__underline", {
     duration: .4,
     height: "1px",
     width: "100%",

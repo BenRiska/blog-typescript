@@ -1,5 +1,5 @@
 import yellowCursor from "./assets/yellow-cursor.svg";
-import {homeAnimation, prepBlogAnimation, showBlogAnimation, removeBlogAnimation} from "./animations";
+import {homeAnimation, prepBlogAnimation} from "./animations";
 import './App.css';
 import Landing from './components/Landing';
 import {useEffect, useState} from "react"
@@ -8,6 +8,9 @@ import darkIcon from "./assets/dark-icon.svg";
 import whiteIcon from "./assets/white-icon.svg"
 import soundIcon from "./assets/sound.svg"
 import darkSoundIcon from "./assets/sound-dark.svg"
+import { Switch, Route, useHistory } from "react-router-dom";
+import BlogList from "./components/BlogList";
+import Blog1 from "./components/Blog1";
 const pianoMusic = require("./assets/piano.mp3");
 
 
@@ -19,6 +22,9 @@ const  App: React.FC = (): JSX.Element => {
   const [landed, setLanded] = useState(false);
   const [music, setMusic] = useState(false);
   const [darkMode, setDarkMode] = useState(false)
+  const [blogView, setBlogView] = useState(false)
+  const [blog, setBlog] = useState(false)
+  let history = useHistory();
 
    // initiates cursor on page load
    useEffect(() => {
@@ -55,10 +61,28 @@ const  App: React.FC = (): JSX.Element => {
                 .setProperty('--cursor-ring', '#f2da87');
   }
 
+  // dark mode 
+  const toggleDarkMode = () => {
+    const app: any = document.querySelector(".App")
+    if(darkMode === true){
+      app.classList.remove("dark")
+    } else{
+      app.classList.add("dark")
+    }
+    setDarkMode(!darkMode)
+  }
+
 
   // start music 
   const playMusic = (): void => {
     setMusic(true);
+  }
+
+  // prepBlogAnimation triggers blog url push on completion
+  const handleBlogSelection = (blogId: any, blogName: any): void => {
+    prepBlogAnimation((e: any) => history.push(`/${blogName}`))
+    setBlog(blogId)
+    setBlogView(true)
   }
 
 
@@ -68,7 +92,7 @@ const  App: React.FC = (): JSX.Element => {
       <div className="cursor"></div>
       {/* Landing page */}
       <Landing playMusic={playMusic} autoLandAnimation={autoLandAnimation}/>
-      {/* Static corner links and logo / mute button */}
+      {/* Main content */}
       <div className="main__content">
       <audio loop className="piano" src={pianoMusic.default}></audio>
       {/* Top bar */}
@@ -90,7 +114,16 @@ const  App: React.FC = (): JSX.Element => {
               <a rel="noreferrer" target="_blank" href="https://github.com/BenRiska">github.</a>
           </span>
         </div>
-        {/* Router */}
+        {/* Router for page content */}
+        <Switch>
+            <Route path="/what-is-ux-and-why-is-it-so-important">
+                <Blog1 darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            </Route>
+
+            <Route path="/">
+              <BlogList handleBlogSelection={handleBlogSelection}/>
+            </Route>
+        </Switch>
       </div>
     </div>
   );

@@ -1,0 +1,132 @@
+.blogList {
+  position: absolute;
+  max-height: 92vh;
+  top: 0;
+  left: 50%;
+  width: 80vw;
+  max-width: 1600px;
+  transform: translatex(-50%) translatey(-5%);
+  z-index: 0;
+  opacity: 0;
+}
+
+.blogList__toggle {
+  display: flex;
+  justify-content: space-between;
+  height: 8vh;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.blogList__layout > img {
+  margin: 0 0.5rem;
+  opacity: 0.3;
+  height: 25px;
+  transition: opacity 0.2s ease;
+}
+
+.blogList__layout > img.active {
+  opacity: 1;
+}
+
+.blogList__layout > img:hover {
+  opacity: 1;
+}
+
+.blogList__filter-wrap {
+  display: inline-block !important;
+  position: relative;
+  padding: 0 5px;
+}
+
+.blogList__filter-aligner {
+  display: flex;
+  align-items: center;
+}
+
+.blogList__filter-aligner > img {
+  margin-left: 5px;
+}
+
+.blogList__filter-aligner > span {
+  font-size: 1.1rem !important;
+}
+
+.blogList__topics-container {
+  position: relative;
+}
+
+.blogList__topics-container > span {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 1.1rem;
+}
+
+.blogList__underline {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+}
+
+.blogList__topics {
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 5px 5px -2px rgba(22, 31, 56, 0.3);
+  height: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.blogList__topics > li {
+  padding: 0.7rem;
+  width: 100px;
+  color: rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+  z-index: 50;
+}
+
+.blogList__topics > li.selected {
+  background-color: rgba(210, 208, 213, 0.2);
+  color: rgba(0, 0, 0, 1);
+}
+
+.blogList__topics > li:hover {
+  background-color: rgba(210, 208, 213, 0.2);
+  color: rgba(0, 0, 0, 1);
+}
+
+@media only screen and (max-width: 1600px) {
+  .blogList {
+    max-width: 80vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .blogList__layout {
+    display: none;
+  }
+
+  .blogList__toggle {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .blogList {
+    max-width: 95vw !important;
+    width: 85vw;
+  }
+
+  .blogList__topics > span {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .blogList__small-screen {
+    display: none;
+  }
+}

@@ -1,11 +1,22 @@
 :root {
-  --cursor-ring: white;
+  --yellow: #f2da87;
+  --white: #ffffff;
+  --cursor-ring: #ffffff;
+  --bg: #ffffff;
+  --normal-text-color: black;
+  --blog-text: 22px;
+  --blog-title-text: 36px;
+  --blog-subtitle-text: 26px;
+  --blog-subtitle-small-text: 26px;
+  --blog-padding: 1.4rem 0;
+  --border-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
   cursor: url(./assets/white-cursor.svg), default;
   height: 100vh !important;
   overflow: hidden;
+  background-color: var(--bg);
 }
 
 .cursor {
