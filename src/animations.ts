@@ -2,7 +2,7 @@ import gsap from "gsap"
 
 let tl = gsap.timeline();
 
-export const homeAnimation = (f: any) => {
+export const homeAnimation = (f: () => void) => {
     tl.to(".landing", {
       opacity: 0,
       duration: 1,
@@ -21,7 +21,7 @@ export const homeAnimation = (f: any) => {
     })
   }
   
-  export const prepBlogAnimation = (showBlog: any) => {
+  export const prepBlogAnimation = (showBlog: () => void) => {
     tl.to(".blogList__topics-container, .blogList__layout, .blogList__container", {
       y: -10,
       duration: 1,
@@ -36,7 +36,7 @@ export const homeAnimation = (f: any) => {
   }
   
   
-  export const showBlogAnimation = (blog: any) => {
+  export const showBlogAnimation = () => {
     tl.to(`.options > p, .option-controls, .header, .blog-body, .blog-footer`, {
       duration: 0.7,
       opacity: 1,
@@ -48,7 +48,7 @@ export const homeAnimation = (f: any) => {
     })
   }
   
-  export const removeBlogAnimation = (blog: any, f: any) => {
+  export const removeBlogAnimation = (f: () => void) => {
     tl.to(`.back, .option-controls, .header, .blog-body, .blog-footer`, {
       duration: 0.5,
       opacity: 0,
@@ -63,12 +63,12 @@ export const homeAnimation = (f: any) => {
 
 
 export const openDropdownAnimation = () => {tl.to(".blogList__underline", {
-    duration: .7,
+    duration: .3,
     width: "100px",
     height: "2px",
     ease: "power1.out"
 }).to(".blogList__topics", {
-    duration: .7,
+    duration: .5,
     height: "160px",
     ease: "power1.out"
 })}
@@ -78,7 +78,7 @@ export const closeDropdownAnimation = () => {tl.to(".blogList__topics", {
     height: "0",
     ease: "expo.inout"
 }).to(".blogList__underline", {
-    duration: .4,
+    duration: .3,
     height: "1px",
     width: "100%",
     ease: "expo.inOut"
@@ -95,7 +95,7 @@ export const showGridItems = () => {tl.to(".grid-item", {
       }
 })}
 
-export const removeGridItems = (setList: any) => {tl.to(".grid-item", {
+export const removeGridItems = (setList: () => void) => {tl.to(".grid-item", {
     duration: 1,
     opacity: 0,
     y: -30,
@@ -116,7 +116,7 @@ export const showListItems = () => {tl.to(".list-item", {
       }
 })}
 
-export const removeListItems = (setGrid: any) => {tl.to(".list-item", {
+export const removeListItems = (setGrid: () => void) => {tl.to(".list-item", {
     duration: 1,
     opacity: 0,
     y: -30,

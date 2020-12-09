@@ -8,8 +8,9 @@ import Grid from "./Grid"
 import List from "./List"
 import "./styles/BlogList.css"
 
+
 interface blogListProps {
-    handleBlogSelection: (blogId: any, blogName: any) => void;
+    handleBlogSelection: (blogName: string) => void;
 }
 
 const BlogList: React.FC<blogListProps> = ({handleBlogSelection}): JSX.Element => {
@@ -44,13 +45,17 @@ const BlogList: React.FC<blogListProps> = ({handleBlogSelection}): JSX.Element =
     }
 
      // handles blog selection
-     const handleSelect: any = (choice: any) => {
+     const handleSelect = (choice: string): void | undefined => {
+
         if(choice === topic){
             return
         }
+
         handleDropdown()
         setTopic(choice);
+
         let filteredBlogs: any = [];
+
         if(choice === "All"){
             filteredBlogs = blogTitles;
         } else{
@@ -63,18 +68,19 @@ const BlogList: React.FC<blogListProps> = ({handleBlogSelection}): JSX.Element =
             })
             return condition;
         })
-    }
+        }
+
     grid === true ? removeGridItems(() => setBlogs(filteredBlogs)) : removeListItems(() => setBlogs(filteredBlogs));
     }
 
     // handles layout change
-    const handleLayout = (newLayout: any) => {
+    const handleLayout = (newLayout: string): void => {
         if(newLayout === "grid"){
             setGridIcon(true)
-            removeListItems((e: any) => setGrid(true))
+            removeListItems(() => setGrid(true))
         } else{
             setGridIcon(false)
-            removeGridItems((e: any) => setGrid(false))
+            removeGridItems(() => setGrid(false))
         }
     }
 
@@ -104,8 +110,8 @@ const BlogList: React.FC<blogListProps> = ({handleBlogSelection}): JSX.Element =
                     <span>blogs.</span>
                 </div>
                 <div className="blogList__layout">
-                    <img onClick={e => handleLayout("grid")} className={gridIcon ? "active" : ""} src={gridLayoutIcon} alt="blog list toggle button"/>
-                    <img onClick={e => handleLayout("list")} className={!gridIcon ? "active" : ""} src={vertLayoutIcon} alt="blog list toggle button"/>
+                    <img onClick={() => handleLayout("grid")} className={gridIcon ? "active" : ""} src={gridLayoutIcon} alt="blog list toggle button"/>
+                    <img onClick={() => handleLayout("list")} className={!gridIcon ? "active" : ""} src={vertLayoutIcon} alt="blog list toggle button"/>
                 </div>
             </div>
             {/* blog list */}

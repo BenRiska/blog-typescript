@@ -1,3 +1,4 @@
+import React from "react"
 import yellowCursor from "./assets/yellow-cursor.svg";
 import {homeAnimation, prepBlogAnimation} from "./animations";
 import './App.css';
@@ -10,35 +11,32 @@ import soundIcon from "./assets/sound.svg"
 import darkSoundIcon from "./assets/sound-dark.svg"
 import { Switch, Route, useHistory } from "react-router-dom";
 import BlogList from "./components/BlogList";
-import Blog1 from "./components/Blog1";
+import Blog from "./components/Blog"
 const pianoMusic = require("./assets/piano.mp3");
-
-
-
-
 
 const  App: React.FC = (): JSX.Element => {
 
+  // used to manipulate landing animation
   const [landed, setLanded] = useState(false);
+  // used to dertmine whether music should be playing
   const [music, setMusic] = useState(false);
+  // used to determine whether screen is light or dark mode
   const [darkMode, setDarkMode] = useState(false)
-  const [blogView, setBlogView] = useState(false)
-  const [blog, setBlog] = useState(false)
+
   let history = useHistory();
 
-   // initiates cursor on page load
+   // renders animated cursor on page load
    useEffect(() => {
     new Cursor(document.querySelector(".cursor"));
     setTimeout(() => {
       if(!landed){
       autoLandAnimation()}
     },3000)
-  }, [])
+  }, [landed])
 
-    // checks if music should be playing 
+    // listens for music state change and handles transition 
     useEffect(() => {
-      const piano: any = document.querySelector(".piano");
-      console.log(piano)
+      const piano= document.querySelector<HTMLAudioElement>(".piano")!;
       if (music){
         piano.play()
         console.log("playing")
@@ -47,23 +45,23 @@ const  App: React.FC = (): JSX.Element => {
       }
     }, [music])
 
-    // gets rid of landing screen
+    // landing animation - gets rid of landing screen
   const autoLandAnimation = (): void => {
     setLanded(true)
-    const body: any = document.querySelector("body");
-    const mainContent: any = document.querySelector(".main__content") 
+    const body = document.querySelector<HTMLDivElement>("body")!;
+    const mainContent = document.querySelector<HTMLDivElement>(".main__content")!;
     homeAnimation(() => {
-        mainContent.style.zIndex = 1;
-        mainContent.style.opacity = 1;
+        mainContent.style.zIndex = "1";
+        mainContent.style.opacity = "1";
       })
       body.style.cursor = `url(${yellowCursor}), default`;
       document.documentElement.style
                 .setProperty('--cursor-ring', '#f2da87');
   }
 
-  // dark mode 
+  // handles dark mode 
   const toggleDarkMode = () => {
-    const app: any = document.querySelector(".App")
+    const app = document.querySelector<HTMLDivElement>(".App")!
     if(darkMode === true){
       app.classList.remove("dark")
     } else{
@@ -73,16 +71,14 @@ const  App: React.FC = (): JSX.Element => {
   }
 
 
-  // start music 
+  // handles music selection from landing page 
   const playMusic = (): void => {
     setMusic(true);
   }
 
-  // prepBlogAnimation triggers blog url push on completion
-  const handleBlogSelection = (blogId: any, blogName: any): void => {
-    prepBlogAnimation((e: any) => history.push(`/${blogName}`))
-    setBlog(blogId)
-    setBlogView(true)
+  // home -> blog page transition - triggers blog url push on completion
+  const handleBlogSelection = (blogName: string): void => {
+    prepBlogAnimation(() => history.push(`/${blogName}`))
   }
 
 
@@ -94,6 +90,7 @@ const  App: React.FC = (): JSX.Element => {
       <Landing playMusic={playMusic} autoLandAnimation={autoLandAnimation}/>
       {/* Main content */}
       <div className="main__content">
+      {/* Invisible audio element */}
       <audio loop className="piano" src={pianoMusic.default}></audio>
       {/* Top bar */}
       <div className="top-bar">
@@ -116,8 +113,8 @@ const  App: React.FC = (): JSX.Element => {
         </div>
         {/* Router for page content */}
         <Switch>
-            <Route path="/what-is-ux-and-why-is-it-so-important">
-                <Blog1 darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <Route path="/blog/:title">
+                <Blog darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
             </Route>
 
             <Route path="/">
