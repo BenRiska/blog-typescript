@@ -102,7 +102,7 @@ const BlogList: React.FC<blogListProps> = ({handleBlogSelection}): JSX.Element =
                         <ul className="blogList__topics">
                             <li onClick={() => handleSelect("All")} className={topic === "All" ? "selected" : ""}>All</li>
                             <li onClick={() => handleSelect("Design")} className={topic === "Design" ? "selected" : ""}>Design</li>
-                            <li onClick={() => handleSelect("Living")} className={topic === "Living" ? "selected" : ""}>Living</li>
+                            <li onClick={() => handleSelect("Software")} className={topic === "Software" ? "selected" : ""}>Software</li>
                             <li onClick={() => handleSelect("Working")} className={topic === "Working" ? "selected" : ""}>Working</li>
                         </ul>
                     </div>

@@ -160,7 +160,7 @@ const Blog: React.FC<blog1Props> = ({darkMode, toggleDarkMode}): JSX.Element  =>
                     } else if (el.element === "p"){
                     return <p className={el.className ? el.className : undefined}>{el.content}</p>
                     } else if (el.element === "img"){
-                        return <img src={`http://localhost:3000/images/${el.url}`} alt={el.alt}/>
+                        return <img className={el.className ? el.className : undefined} src={`http://localhost:3000/images/${el.url}`} alt={el.alt}/>
                     } else if (el.element === "ul"){
                         return <ul>
                             {el.children.map((child: any) => 

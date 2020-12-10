@@ -64,6 +64,8 @@ body {
 
 .logo {
   z-index: 5;
+  display: flex;
+  align-items: center;
 }
 
 .white-icon {
@@ -72,10 +74,10 @@ body {
 
 .sound-icon {
   opacity: 0.4;
-  height: 40px;
+  height: 20px;
   transition: all 0.5s ease;
-  padding: 10px;
   z-index: 5;
+  margin-left: 10px;
 }
 
 .sound-icon.on {
@@ -174,13 +176,17 @@ body {
   }
 }
 
-@media only screen and (max-width: 1200px) {
-  .socials {
-    display: none;
+@media only screen and (max-width: 1300px) {
+  .white-icon {
+    height: 45px;
   }
 }
 
 @media only screen and (max-width: 1000px) {
+  .white-icon {
+    height: 40px;
+  }
+
   .sound-icon {
     display: none;
   }
@@ -204,10 +210,6 @@ body {
     --blog-title-text: 30px;
     --blog-subtitle-text: 24px;
     --blog-padding: 1rem 0;
-  }
-
-  .white-icon {
-    height: 40px;
   }
 
   .top-bar {

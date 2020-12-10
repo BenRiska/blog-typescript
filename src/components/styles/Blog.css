@@ -22,6 +22,11 @@
   width: 600px;
 }
 
+.img-bg {
+  padding: 1rem 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
 .options > p {
   opacity: 0;
   transform: translatey(30px);

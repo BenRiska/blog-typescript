@@ -74,11 +74,11 @@ export const openDropdownAnimation = () => {tl.to(".blogList__underline", {
 })}
 
 export const closeDropdownAnimation = () => {tl.to(".blogList__topics", {
-    duration: .5,
+    duration: .3,
     height: "0",
     ease: "expo.inout"
 }).to(".blogList__underline", {
-    duration: .3,
+    duration: .5,
     height: "1px",
     width: "100%",
     ease: "expo.inOut"

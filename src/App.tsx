@@ -14,6 +14,7 @@ import BlogList from "./components/BlogList";
 import Blog from "./components/Blog"
 const pianoMusic = require("./assets/piano.mp3");
 
+
 const  App: React.FC = (): JSX.Element => {
 
   // used to manipulate landing animation
