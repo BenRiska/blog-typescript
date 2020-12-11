@@ -110,7 +110,7 @@ const Blog: React.FC<blog1Props> = ({darkMode, toggleDarkMode}): JSX.Element  =>
     // handles clipboard link
     const pasteToClipboard = () => {
         const copyLink: any = document.querySelector(".blog-link");
-        navigator.clipboard.writeText("https://blog-6a15f.web.app/how-to-be-the-best-at-everything");
+        navigator.clipboard.writeText(`https://blog-6a15f.web.app/blog/${title}`);
         if (!copyLink.classList.contains("clicked")){
           copyLink.classList.add("clicked");
           setTimeout(() => {copyLink.classList.remove("clicked")}, 1000)
@@ -160,7 +160,7 @@ const Blog: React.FC<blog1Props> = ({darkMode, toggleDarkMode}): JSX.Element  =>
                     } else if (el.element === "p"){
                     return <p className={el.className ? el.className : undefined}>{el.content}</p>
                     } else if (el.element === "img"){
-                        return <img className={el.className ? el.className : undefined} src={`http://localhost:3000/images/${el.url}`} alt={el.alt}/>
+                        return <img className={el.className ? el.className : undefined} src={`http://blog-6a15f.web.app/images/${el.url}`} alt={el.alt}/>
                     } else if (el.element === "ul"){
                         return <ul>
                             {el.children.map((child: any) => 
@@ -174,13 +174,12 @@ const Blog: React.FC<blog1Props> = ({darkMode, toggleDarkMode}): JSX.Element  =>
         {/* blog footer */}
         <div className="blog-footer">
             <div className="footer-media">
-                <p>Enjoyed the read? share it for friends to see</p>
                 <div className="media-links">
-                <div  className="twitter"></div>
+                {/* <div  className="twitter"></div> */}
                 <div onClick={pasteToClipboard}  className="copy-link blog-link">
                 </div>
-                <div  className="linkedin">
-                </div>
+                {/* <div  className="linkedin">
+                </div> */}
                 </div>
             </div>
             <div className="footer-read-more">

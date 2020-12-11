@@ -238,7 +238,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 
 .footer-media > p {
@@ -248,11 +248,13 @@
 
 .media-links {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .media-links div {
   margin: 0;
-  margin-left: 1rem;
   padding: 0;
 }
 
