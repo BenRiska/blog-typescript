@@ -69,7 +69,8 @@ body {
 }
 
 .white-icon {
-  height: 50px;
+  height: 40px;
+  align-self: top;
 }
 
 .sound-icon {

@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   width: 9rem;
-  max-width: 180px;
+  max-width: 200px;
   margin-bottom: 10vh;
   position: relative;
   z-index: 2000;
@@ -49,8 +49,10 @@
 
 .landing__content > p {
   text-align: center;
-  padding: 0 5px;
-  padding-top: 20px;
+  padding-top: 30px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  word-spacing: 3px;
 }
 
 @media only screen and (max-width: 1000px) {
