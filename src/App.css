@@ -177,12 +177,6 @@ body {
   }
 }
 
-@media only screen and (max-width: 1300px) {
-  .white-icon {
-    height: 45px;
-  }
-}
-
 @media only screen and (max-width: 1000px) {
   .white-icon {
     height: 40px;
