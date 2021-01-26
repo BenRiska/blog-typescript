@@ -7,7 +7,7 @@
 <p>Framework: </p>
 <p>
   <img src="https://img.shields.io/badge/-React-white?style=flat-square&logo=react" />
-  <img src="https://img.shields.io/badge/-typescript?style=flat-square&logo=typescript" />
+  <img src="https://img.shields.io/badge/-typescript-white?style=flat-square&logo=typescript" />
 </p>
 
 <p>Hosting: </p>
