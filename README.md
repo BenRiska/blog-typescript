@@ -4,7 +4,7 @@
 <p>Languages: </p>
 <p><img src="https://img.shields.io/badge/-JavaScript-white?style=flat-square&logo=javascript" />
   
-<p>Framework: </p>
+<p>Frameworks: </p>
 <p>
   <img src="https://img.shields.io/badge/-React-white?style=flat-square&logo=react" />
   <img src="https://img.shields.io/badge/-Typescript-white?style=flat-square&logo=typescript" />
