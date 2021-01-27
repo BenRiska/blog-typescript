@@ -253,18 +253,119 @@ export const blogs = [{
     id: 3,
     title: "Setting goals for 2021",
     categories: ["Working"],
-    duration: 4,
+    duration: 5,
     uploaded: "27th Jan 2021",
     content: [
         {
             element: "img",
             url: "goals-banner.jpg",
-            alt: "highway"
+            alt: "goals"
         },
         {
             element: "h2",
             className: "blog-subtitle",
             content: "2020"
+        },
+        {
+            element: "p",
+            content: '2020 was the first year that I seriously took into consideration the time I spent being unproductive, this means binging Netflix in the evening, playing video games all day on the weekend, taking instagram breaks every 30 minutes and less obvious issues like spending each day sitting on the bus or train listening to music. I knew there was a better way to increase my productivity but I never made the choice to address it because my life seemed fine.'
+        },
+        {
+            element: "p",
+            content: "However the older I grow the more I value time, there is always a long list of things on my to do list - whether it's picking up a new programming language or learning a new song to play on piano. I used to mindlessly prioritise these tasks and if it didn't get done I'd just accept the idea that I was 'too busy'. I would make the assumption that putting in more effort to get these things done would impact my social life but deep down I knew that doesn't make sense. Most people can find an extra 30 mins in the day to get something done if they really try, and there are plenty of ways to improve your learning process so you can get more done within that finite amount of time."
+        },
+        {
+            element: "p",
+            content: "My journey to this state of mind wasn't an entirely conscious effort, over the past few years I've been getting somewhat frustrated with myself for not getting my goals done. I've always had high expectations for myself which can be a good and bad thing. It's led me to continuously learn and grow, but without a solid understanding of what creates that growth I became annoyed at myself whenever I failed to meet those expectations."
+        },
+        {
+            element: "p",
+            content: "This was a stupid situation that I had created for myself, getting annoyed because I didn't hit goals while simultaneously failing to prepare for them. This lead up to 2020 when I finally decided to sit down and reflect on how I want to live my life. "
+        },
+        {
+            element: "h2",
+            className: "blog-subtitle",
+            content: "Self Reflection"
+        },
+        {
+            element: "p",
+            content: "Reflection can be tough, for you to get anything worthwhile out of it you need to be brutally honest with yourself. What went wrong, what went right, what could be done better. For example if I planned to read a book and it didn't get done, I could blame it on my work hours being too busy, I could blame it on some social situation that came up. Neither of these answers would get me anywhere. Instead I should be looking to critique my own actions, was there any time that could have been spent better? Could I have made time to read before going to sleep? Could I have read a few chapters on the bus instead of listening to music. When you start looking inward it will become apparent that most of the time there are multiple ways you could have prepared better for the task."
+        },
+        {
+            element: "p",
+            content: "On top of this, you need to reflect often to get the most out of it, It's very easy for us to fall back into bad habits if we don't check ourselves. If I made a plan to go to the gym 5 times a week, over time I could get lazy and fall out of routine. However if I sat down to reflect on my progress every week I'm much more likely to hold myself accountable if things go wrong."
+        },
+        {
+            element: "h2",
+            className: "blog-subtitle",
+            content: "Be smart with your goals"
+        },{
+            element: "img",
+            url: "goal-idea.jpg",
+            alt: "goals"
+        },
+        {
+            element: "p",
+            content: "Growing up I would give myself massive goals with no context as to how they would get done. For example in 2016 I decided to learn the piano, I would watch these 'progression' videos on youtube where people would go from beginner to pro in the space of a year and I wanted to do the same. The first month was great - I was super motivated and spent hours each day picking up the basic techniques. However that motivation eventually tapered off and after learning a few  songs I spent less and less time researching and practising the steps I needed to take in order to get better."
+        },
+        {
+            element: "p",
+            content: "This was because I only had one big goal and no plan to carry it out. All I thought about was being good at piano and I didn't care about the smaller less significant achievements like learning to play scales, memorising notes and all the other techniques that have to be learned in order to become a good pianist."
+        },
+        {
+            element: "p",
+            content: "So a year had passed and my progress was nowhere near where I had planned, this could have been avoided if I was smart with my goals. I should have regularly gone over my progress and figured out what I've improved, what needs to be improved and how I can do that over the next week or two. I didn't fully understand the power that comes with creating smaller more easily achievable short term goals. My piano journey is something that takes years but learning a new practise exercise is something that can be done in hours. It's far easier to measure progress and remain motivated when you take note of small improvements. "
+        },
+        {
+            element: "h2",
+            className: "blog-subtitle",
+            content: "How I set goals for myself now"
+        },
+        {
+            element: "p",
+            content: "So we just entered 2021 and I recently decided to reflect on the entirety of 2020, I managed to write a lengthy list of achievements and it made me proud. I haven't yet explained why we should reflect on our wins and it's quite simple, life isn't all about work, sometimes it's nice to sit back and appreciate the effort you've put in to that point. I'm often amazed when I look back and remember how much knowledge I lacked at a certain point in time, it does good to remember these things so you can appreciate the worth gained from your efforts."
+        },
+        {
+            element: "p",
+            content: "Looking at my shortcomings in 2020 gave me a good idea of where my energy should be redirected this year and what habits I need to avoid. It would have been easy to blame most of it on Covid but as I mentioned before, you'll only get progress by looking inwards."
+        },
+        {
+            element: "p",
+            content: "So how do I set my short term goals? typically I will write A list of tasks every month that vary in difficulty, some may take a couple hour and some may take a couple of days, realistically they can all be done if I prioritise correctly and be smart with my time."
+        },
+        {
+            element: "p",
+            content: "When I begin a task that will need to be carried out over multiple days, I create another list of tasks specifically for that task to help streamline my progression so I don't get confused and waste time figuring out where I'm at and what to do next."
+        },
+        {
+            element: "p",
+            content: "For example this month I decided to learn a programming framework called Apollo, I wrote the steps needed to learn it - regularly updating them to reflect the point I was at and keep me on track. If you are working on more than one long term project you can easily juggle multiple tasks with this method."
+        },
+        ,{
+            element: "img",
+            url: "goals-list.jpg",
+            alt: "goals"
+        },
+        {
+            element: "h2",
+            className: "blog-subtitle",
+            content: "Try it out"
+        },
+        {
+            element: "p",
+            content: "Goal setting is great lol. Not only have I become more productive but I'm more content with myself and who I am as a person."
+        },
+        {
+            element: "p",
+            content: "If you ever feel frustrated that you aren't where you want to be, or perhaps your work life balance is becoming too overwhelming then maybe this is the thing you're missing. "
+        },
+        {
+            element: "p",
+            content: "Even if you have no issues and love your life, adopting this technique could create exciting new opportunities for your future."
+        },
+        {
+            element: "p",
+            content: "I may revisit this at the end of the year and post an update on my routine, until then I hope you are enjoying life and staying safe through these crazy times.  "
         }
     ]
 }]
