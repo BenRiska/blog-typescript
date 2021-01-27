@@ -248,4 +248,23 @@ export const blogs = [{
             content: 'I recommend going through the documentation to check before installing any package to your project.'
         }
     ]
+},
+{
+    id: 3,
+    title: "Setting goals for 2021",
+    categories: ["Working"],
+    duration: 4,
+    uploaded: "27th Jan 2021",
+    content: [
+        {
+            element: "img",
+            url: "goals-banner.jpg",
+            alt: "highway"
+        },
+        {
+            element: "h2",
+            className: "blog-subtitle",
+            content: "2020"
+        }
+    ]
 }]
